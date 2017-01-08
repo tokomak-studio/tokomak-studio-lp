@@ -34,7 +34,7 @@
       @font-face {
         font-family: RegularLight;
         font-style: normal;
-        src: url("/Regular-Light.otf")
+        src: url("Regular-Light.otf")
       }
 
       /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
@@ -51,7 +51,7 @@
       body { font-size: 1.125em; line-height: 1.75; }
       .svg--icons { height: 0; width: 0; position: absolute; visibility: hidden; }
       .svg--icon svg { position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; width: 100%; height: 100%; }
-      .barba-container { min-height: 100%; }
+      .barba-container { min-height: 100%; overflow: hidden; position: relative; }
       .wrapper { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; }
       .wrapper >.table { max-width: 1400px; margin: 0 auto; display: table; width: 100%; height: 100%; }
       .wrapper >.table >.table-cell { color: #fff; vertical-align: middle; display: table-cell; text-align: center; }
@@ -60,7 +60,20 @@
       .tag svg:nth-child(2), .tag svg:nth-child(3) { clip: rect(0, 0, 0, 0); }
       .soon { font-family: RegularLight, sans-serif; font-size: 22.6px; font-weight: normal; color: #636466; letter-spacing: 0.1em; margin: 0; margin-top: 10%; }
 
-      .tag svg:nth-child(2) {
+      .grad {
+        height: 120%;
+        position: absolute;
+        width: 200%;
+        top: 73%;
+        left: -50%;
+        background: -moz-radial-gradient(center, ellipse cover, rgba(0,54,255,1) 0%, rgba(23,22,31,0.5) 50%, rgba(23,22,31,0) 100%);
+        background: -webkit-radial-gradient(center, ellipse cover, rgba(0,54,255,1) 0%,rgba(23,22,31,0.5) 50%,rgba(23,22,31,0) 100%);
+        background: radial-gradient(ellipse at center, rgba(0,54,255,1) 0%,rgba(23,22,31,0.5) 50%,rgba(23,22,31,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0036ff', endColorstr='#0017161f',GradientType=1 );
+      }
+
+      .tag svg.anim:nth-child(2) {
+        display: none;
         left: -3px;
 
         -webkit-animation: glitch--1 4s infinite linear alternate-reverse;
@@ -73,7 +86,8 @@
         opacity: 0.5;
       }
 
-      .tag svg:nth-child(3) {
+      .tag svg.anim:nth-child(3) {
+        display: none;
         left: 3px;
 
         -webkit-animation: glitch--2 5s infinite linear alternate-reverse;
@@ -247,13 +261,14 @@
             </h1>
             <h2 href="/" class="tag svg--icon">Design · Develop · Create
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tag"></use></svg>
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tag"></use></svg>
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tag"></use></svg>
+              <svg class="anim"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tag"></use></svg>
+              <svg class="anim"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tag"></use></svg>
             </h2>
             <p class="soon">- coming soon -</p>
           </div>
         </div>
   		</main>
+      <!--<div class="grad"></div>-->
     </div>
 
   </body>
